@@ -5,7 +5,7 @@ first_agent=create_agent(
     model="deepseek-chat",
     tools=[],
     middleware=[],
-    system_prompt="不管用户说什么，你都回答：小心天狼星人的间谍……"
+    system_prompt="You are a helpful assistant that provides weather information."
     )
 response=first_agent.invoke({"messages": [{"role": "user", "content": "今天天气怎么样？"}]})
 print(response)
