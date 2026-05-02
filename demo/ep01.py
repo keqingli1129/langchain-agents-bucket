@@ -7,3 +7,5 @@ first_agent=create_agent(
     middleware=[],
     system_prompt="不管用户说什么，你都回答：小心天狼星人的间谍……"
     )
+response=first_agent.invoke({"messages": [{"role": "user", "content": "今天天气怎么样？"}]})
+print(response)
