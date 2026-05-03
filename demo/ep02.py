@@ -68,8 +68,20 @@ first_agent=create_agent(
     )
 
 import logging
-logging.basicConfig(level=logging.DEBUG)
-
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(name)s - %(levelname)s - %(message)s'
+)
+logging.getLogger("langchain").setLevel(logging.DEBUG)
+logging.getLogger("langchain_core").setLevel(logging.DEBUG)
+# Enable HTTP client loggers
+logging.getLogger("httpcore").setLevel(logging.DEBUG)
+logging.getLogger("httpcore.connection").setLevel(logging.DEBUG)
+logging.getLogger("httpcore.http11").setLevel(logging.DEBUG)
+logging.getLogger("openai").setLevel(logging.DEBUG)
+logging.getLogger("openai._base_client").setLevel(logging.DEBUG)
+logging.getLogger("urllib3").setLevel(logging.DEBUG)
+logging.getLogger("urllib3.connectionpool").setLevel(logging.DEBUG)
 response=first_agent.invoke(
     {"messages":[{"role":"user","content":"请问当前北京是什么时间？"}]},
     )
