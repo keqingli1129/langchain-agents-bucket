@@ -11,3 +11,4 @@ wheels/
 demo/.env
 demo/.langgraph_api/
 *.pckl
+.env
